@@ -176,28 +176,11 @@ typename BinarySearchTree<D>::TreeNode*& BinarySearchTree<D>::_swap_nodes(
     return node2->right;
   }
   else {
-    // If the two nodes aren't adjacent in the tree, it's a lot easier.
-    // We can swap their child pointers and swap their main pointers,
-    // and it just works. (Again, the easiest way to see this is true is
-    // to draw a picture of the pointer connections between the nodes.)
-
     std::swap(node1->left, node2->left);
     std::swap(node1->right, node2->right);
     std::swap(node1, node2);
-
-    // This is the actual pointer in the tree that is now pointing to what
-    // was our original node1 object, so return it by reference.
     return node2;
   }
-
-  // For future reference, here are some debugging output statements that
-  // might be helpful if trouble arises:
-
-  // std::cerr << "\nAfter swap: [" << node1->key << " , " << node1->data
-  //   << " ] [ " << node2->key << " , " << node2->data << " ] " << std::endl;
-  // std::cerr << "\nn1: " << node1 << " n2: " << node2
-  //   << "\n n1l: " << node1->left << " n1r: " << node1->right
-  //   << "\n n2l: " << node2->left << " n2r: " << node2->right << std::endl;
 
 }
 
