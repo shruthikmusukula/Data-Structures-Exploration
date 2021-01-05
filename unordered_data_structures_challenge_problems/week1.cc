@@ -21,7 +21,6 @@ int insert(int value, std::vector<int> &table) {
       hashedIndex = 0;
     else
       ++hashedIndex;
-    // ++hashedIndex;
     ++probeCount;
   }
   // Assign new value and return probeCount
